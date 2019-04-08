@@ -3,3 +3,4 @@ stages.txt
 /API.DatingApp/bin
 /API.DatingApp/obj
 /SPA.DatingApp/node_modules
+.vscode
