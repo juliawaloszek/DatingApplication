@@ -1,0 +1,2 @@
+# DatingApplication
+This appliaction is using .NET Core  and Angular to build  fully functional but relatively simpledating site. This will include the ability for users to register, log in authenticating the site using json web tokens. Users will be able to view over users profiles including a photo gallery we'll be able to cendon Likes and send them private messages. Users will also be able to customise their own profiles and use a drag and drop photo uploader to store their own photos securely.
