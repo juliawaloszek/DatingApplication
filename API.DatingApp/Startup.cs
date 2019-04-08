@@ -28,7 +28,7 @@ namespace API.DatingApp
         public void ConfigureServices(IServiceCollection services)
         {
             //dodanie bazy danych
-            services.AddDbContext<DataContext> (x => x.UseSqlite("Connecionstring"));
+            services.AddDbContext<DataContext> (x => x.UseSqlite(Configuration.GetConnectionString("DefaultConnecion")));
             //podstawowa zawartość 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
