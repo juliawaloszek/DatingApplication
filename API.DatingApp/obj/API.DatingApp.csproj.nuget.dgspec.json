@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "d:\\ #Rachel\\Kursy\\UDEMY\\Build an app with ASPNET Core and Angular from scratch\\Moj projekt\\DatingApplication\\API.DatingApp\\API.DatingApp\\API.DatingApp.csproj": {}
+    "d:\\ #Rachel\\Kursy\\UDEMY\\Build an app with ASPNET Core and Angular from scratch\\Moj projekt\\DatingApplication\\API.DatingApp\\API.DatingApp.csproj": {}
   },
   "projects": {
-    "d:\\ #Rachel\\Kursy\\UDEMY\\Build an app with ASPNET Core and Angular from scratch\\Moj projekt\\DatingApplication\\API.DatingApp\\API.DatingApp\\API.DatingApp.csproj": {
+    "d:\\ #Rachel\\Kursy\\UDEMY\\Build an app with ASPNET Core and Angular from scratch\\Moj projekt\\DatingApplication\\API.DatingApp\\API.DatingApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\ #Rachel\\Kursy\\UDEMY\\Build an app with ASPNET Core and Angular from scratch\\Moj projekt\\DatingApplication\\API.DatingApp\\API.DatingApp\\API.DatingApp.csproj",
+        "projectUniqueName": "d:\\ #Rachel\\Kursy\\UDEMY\\Build an app with ASPNET Core and Angular from scratch\\Moj projekt\\DatingApplication\\API.DatingApp\\API.DatingApp.csproj",
         "projectName": "API.DatingApp",
-        "projectPath": "d:\\ #Rachel\\Kursy\\UDEMY\\Build an app with ASPNET Core and Angular from scratch\\Moj projekt\\DatingApplication\\API.DatingApp\\API.DatingApp\\API.DatingApp.csproj",
+        "projectPath": "d:\\ #Rachel\\Kursy\\UDEMY\\Build an app with ASPNET Core and Angular from scratch\\Moj projekt\\DatingApplication\\API.DatingApp\\API.DatingApp.csproj",
         "packagesPath": "C:\\Users\\Rachel\\.nuget\\packages\\",
-        "outputPath": "d:\\ #Rachel\\Kursy\\UDEMY\\Build an app with ASPNET Core and Angular from scratch\\Moj projekt\\DatingApplication\\API.DatingApp\\API.DatingApp\\obj\\",
+        "outputPath": "d:\\ #Rachel\\Kursy\\UDEMY\\Build an app with ASPNET Core and Angular from scratch\\Moj projekt\\DatingApplication\\API.DatingApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
