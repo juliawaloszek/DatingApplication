@@ -1,2 +1,5 @@
 # Don't track content of these folders
 stages.txt
+/API.DatingApp/bin
+/API.DatingApp/obj
+
