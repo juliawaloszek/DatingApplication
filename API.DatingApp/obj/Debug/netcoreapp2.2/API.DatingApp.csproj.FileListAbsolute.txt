@@ -12,3 +12,17 @@ D:\ #Rachel\Kursy\UDEMY\Build an app with ASPNET Core and Angular from scratch\M
 D:\ #Rachel\Kursy\UDEMY\Build an app with ASPNET Core and Angular from scratch\Moj projekt\DatingApplication\API.DatingApp\obj\Debug\netcoreapp2.2\API.DatingApp.RazorTargetAssemblyInfo.cache
 D:\ #Rachel\Kursy\UDEMY\Build an app with ASPNET Core and Angular from scratch\Moj projekt\DatingApplication\API.DatingApp\obj\Debug\netcoreapp2.2\API.DatingApp.dll
 D:\ #Rachel\Kursy\UDEMY\Build an app with ASPNET Core and Angular from scratch\Moj projekt\DatingApplication\API.DatingApp\obj\Debug\netcoreapp2.2\API.DatingApp.pdb
+D:\#Rachel\Kursy\UDEMY\Build-an-app-with-aspnet-core-and-angular-from-scratch\MojProjekt\DatingApplication\API.DatingApp\bin\Debug\netcoreapp2.2\API.DatingApp.deps.json
+D:\#Rachel\Kursy\UDEMY\Build-an-app-with-aspnet-core-and-angular-from-scratch\MojProjekt\DatingApplication\API.DatingApp\bin\Debug\netcoreapp2.2\API.DatingApp.runtimeconfig.json
+D:\#Rachel\Kursy\UDEMY\Build-an-app-with-aspnet-core-and-angular-from-scratch\MojProjekt\DatingApplication\API.DatingApp\bin\Debug\netcoreapp2.2\API.DatingApp.runtimeconfig.dev.json
+D:\#Rachel\Kursy\UDEMY\Build-an-app-with-aspnet-core-and-angular-from-scratch\MojProjekt\DatingApplication\API.DatingApp\bin\Debug\netcoreapp2.2\API.DatingApp.dll
+D:\#Rachel\Kursy\UDEMY\Build-an-app-with-aspnet-core-and-angular-from-scratch\MojProjekt\DatingApplication\API.DatingApp\bin\Debug\netcoreapp2.2\API.DatingApp.pdb
+D:\#Rachel\Kursy\UDEMY\Build-an-app-with-aspnet-core-and-angular-from-scratch\MojProjekt\DatingApplication\API.DatingApp\obj\Debug\netcoreapp2.2\API.DatingApp.csprojAssemblyReference.cache
+D:\#Rachel\Kursy\UDEMY\Build-an-app-with-aspnet-core-and-angular-from-scratch\MojProjekt\DatingApplication\API.DatingApp\obj\Debug\netcoreapp2.2\API.DatingApp.csproj.CoreCompileInputs.cache
+D:\#Rachel\Kursy\UDEMY\Build-an-app-with-aspnet-core-and-angular-from-scratch\MojProjekt\DatingApplication\API.DatingApp\obj\Debug\netcoreapp2.2\API.DatingApp.RazorAssemblyInfo.cache
+D:\#Rachel\Kursy\UDEMY\Build-an-app-with-aspnet-core-and-angular-from-scratch\MojProjekt\DatingApplication\API.DatingApp\obj\Debug\netcoreapp2.2\API.DatingApp.RazorAssemblyInfo.cs
+D:\#Rachel\Kursy\UDEMY\Build-an-app-with-aspnet-core-and-angular-from-scratch\MojProjekt\DatingApplication\API.DatingApp\obj\Debug\netcoreapp2.2\API.DatingApp.AssemblyInfoInputs.cache
+D:\#Rachel\Kursy\UDEMY\Build-an-app-with-aspnet-core-and-angular-from-scratch\MojProjekt\DatingApplication\API.DatingApp\obj\Debug\netcoreapp2.2\API.DatingApp.AssemblyInfo.cs
+D:\#Rachel\Kursy\UDEMY\Build-an-app-with-aspnet-core-and-angular-from-scratch\MojProjekt\DatingApplication\API.DatingApp\obj\Debug\netcoreapp2.2\API.DatingApp.RazorTargetAssemblyInfo.cache
+D:\#Rachel\Kursy\UDEMY\Build-an-app-with-aspnet-core-and-angular-from-scratch\MojProjekt\DatingApplication\API.DatingApp\obj\Debug\netcoreapp2.2\API.DatingApp.dll
+D:\#Rachel\Kursy\UDEMY\Build-an-app-with-aspnet-core-and-angular-from-scratch\MojProjekt\DatingApplication\API.DatingApp\obj\Debug\netcoreapp2.2\API.DatingApp.pdb
