@@ -80,5 +80,6 @@ namespace API.DatingApp.Controllers
                 token = tokenHandler.WriteToken(token)
             });
         }
+
     }
 }
