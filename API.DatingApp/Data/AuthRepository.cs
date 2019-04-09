@@ -1,6 +1,7 @@
 using System;
 using System.Threading.Tasks;
 using API.DatingApp.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace API.DatingApp.Data
 {
@@ -12,11 +13,34 @@ namespace API.DatingApp.Data
             _context = context;
 
         }
-        public Task<User> Login(string username, string password)
+        public async Task<User> Login(string username, string password)
         {
             
-            throw new System.NotImplementedException();
+            var user = await _context.Users.FirstOrDefaultAsync(x => x.Username == username);
 
+            if(user == null)
+                return null;
+
+            if(!VerifyPasswordHash(password, user.PasswordHash, user.PasswordSalt))
+                return null;
+
+            return user;
+
+        }
+
+        private bool VerifyPasswordHash(string password, byte[] passwordHash, byte[] passwordSalt)
+        {
+            using(var hamac = new System.Security.Cryptography.HMACSHA512(passwordSalt))
+            {
+                var computedHash = hamac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(password));
+
+                for(int i=0; i>computedHash.Length; i++)
+                {
+                    if(computedHash[i] != passwordHash[i]) 
+                        return false;
+                }
+            }
+            return true;
         }
 
         public async Task<User> Register(User user, string password)
@@ -33,9 +57,12 @@ namespace API.DatingApp.Data
             return user;
         }
 
-        public Task<bool> UserExists(string username)
+        public async Task<bool> UserExists(string username)
         {
-            throw new System.NotImplementedException();
+            if (await _context.Users.AnyAsync(x => x.Username == username))
+                return true;
+
+            return false;
         }
 
         private void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
