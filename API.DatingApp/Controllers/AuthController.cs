@@ -21,7 +21,6 @@ namespace API.DatingApp.Controllers
         [HttpPost("register")]
         public async Task<IActionResult> Register (UserForRegisterDto userForRegisterDto)
         {
-            //validate request
 
             userForRegisterDto.Username = userForRegisterDto.Username.ToLower();
 
