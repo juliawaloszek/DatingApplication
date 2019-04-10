@@ -25,7 +25,8 @@ import { RegisterComponent } from './register/register.component';
       FormsModule
    ],
    providers: [
-      AuthService
+      AuthService,
+      // ErrorInterceptorProvider,
    ],
    bootstrap: [
       AppComponent
