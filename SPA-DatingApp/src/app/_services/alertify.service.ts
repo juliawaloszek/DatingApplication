@@ -23,7 +23,6 @@ success(message: string) {
 
 error(message: string) {
   alertify.console.error();
-  (message);
 }
 
 
