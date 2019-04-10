@@ -23,6 +23,7 @@ namespace API.DatingApp.Controllers
         }
 
         // GET api/values
+        [AllowAnonymous]
         [HttpGet]
         // public IActionResult GetValues() - synchronise method
         public async Task<IActionResult> GetValues()
