@@ -8,6 +8,7 @@ namespace API.DatingApp.Data
         public DataContext (DbContextOptions<DataContext> options) : base (options) {}
         public DbSet<Value> Value {get; set; }
         public DbSet<User> Users {get; set; }
+        public DbSet<Photo> Photos { get; set; }
         
     }
 }
