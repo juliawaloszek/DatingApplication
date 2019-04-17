@@ -29,7 +29,7 @@ import { AlertifyService } from './_services/alertify.service';
    providers: [
       AuthService,
       ErrorInterceptorProvider,
-      AlertifyService,
+      AlertifyService
    ],
    bootstrap: [
       AppComponent
