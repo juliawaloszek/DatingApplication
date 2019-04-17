@@ -1,9 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+/* Dodanie bootstrapa */
 @import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-@import '../node_modules/font-awesome/css/font-awesome.min.css';
-/* @import '../node_modules/alertifyjs/css/alertify.min.css'; */
-/* @import '../node_modules/alertifyjs/css/themes/bootstrap.min.css'; */
 
+/* United theme */
+/* @import '../node_modules/bootswatch/dist/united/bootstrap.min.css'; */
+/* Lux theme */
+@import '../node_modules/bootswatch/dist/lux/bootstrap.min.css';
+
+@import '../node_modules/font-awesome/css/font-awesome.min.css';
+/* Dodanie modułu alertyfy */
 @import '../node_modules/alertifyjs/css/alertify.css';
 @import '../node_modules/alertifyjs/css/themes/bootstrap.css';
 
