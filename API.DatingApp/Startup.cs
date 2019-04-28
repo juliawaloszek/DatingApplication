@@ -39,6 +39,9 @@ namespace API.DatingApp
             //podstawowa zawartość 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
+            //Zasinalnie danych testowych
+            services.AddTransient<Seed>();
+
             //Dodanie Cors 
             services.AddCors();
 
@@ -59,7 +62,7 @@ namespace API.DatingApp
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, Seed seeder)
         {
             if (env.IsDevelopment())
             {
@@ -84,6 +87,7 @@ namespace API.DatingApp
             }
 
             // app.UseHttpsRedirection();
+            // seeder.SeedUsers();
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             app.UseAuthentication();
             app.UseMvc();
