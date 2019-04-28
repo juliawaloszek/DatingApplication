@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using API.DatingApp.Data;
 using API.DatingApp.Helpers;
+using AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
@@ -48,6 +49,8 @@ namespace API.DatingApp
 
             //Dodanie Cors 
             services.AddCors();
+
+            services.AddAutoMapper();
 
             //moje serwisy
             services.AddScoped<IAuthRepository, AuthRepository>();
