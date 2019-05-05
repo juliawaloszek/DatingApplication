@@ -1,0 +1,27 @@
+/* .member-tabset textarea{
+    padding: 0;
+    border: 1px solid rgba(0,0,0,0.125);
+}
+
+.member-tabset input{
+    padding: 0;
+    margin-left: 1em;
+    margin-right: 1em;
+    border: 1px solid rgba(0,0,0,0.125);
+    } */
+
+.img-thumbnail {
+    margin: 25px; 
+    width: 85%;
+    height: 85%;
+}
+    
+.card-body {
+    padding: 0 25px;
+}
+    
+.card-footer {
+    padding: 10px 15px;
+    background-color: #ffffff;
+    border-top: none;
+}    
