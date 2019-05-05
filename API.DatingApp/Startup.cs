@@ -46,9 +46,10 @@ namespace API.DatingApp
 
             //Zasinalnie danych testowych
             services.AddTransient<Seed>();
-
             //Dodanie Cors 
             services.AddCors();
+            //Cloudinary settings
+            services.Configure<CloudinarySettings>(Configuration.GetSection("CloudinarySettings"));
 
             services.AddAutoMapper();
 

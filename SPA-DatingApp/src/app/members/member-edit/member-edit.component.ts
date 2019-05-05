@@ -16,13 +16,13 @@ export class MemberEditComponent implements OnInit {
   @ViewChild('editForm') editForm: NgForm;
   @HostListener('window:beforeunload', ['$event'])
   unloadNotification($event: any) {
-    if(this.editForm.dirty) {
+    if (this.editForm.dirty) {
       $event.returnValue = true;
     }
   }
 
   constructor(private route: ActivatedRoute, private alertify: AlertifyService,
-    private userService: UserService, private authService: AuthService) { }
+              private userService: UserService, private authService: AuthService) { }
 
   ngOnInit() {
     this.route.data.subscribe(data => {
