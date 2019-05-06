@@ -12,14 +12,15 @@
 @import '../node_modules/alertifyjs/css/alertify.css';
 @import '../node_modules/alertifyjs/css/themes/bootstrap.css';
 
+/* Dodanie date picker */
+@import '../node_modules/ngx-bootstrap/datepicker/bs-datepicker.css';
 
 
 
-/* ===========
-Style tab-panel component
-=========== */
 
-.tab-panel {
+/* Style tab-panel component */
+
+  .tab-panel {
     border: 1px solid #ddd;
     padding: 10px;
     border-radius: 4px;
