@@ -2,7 +2,12 @@
   <div class="col-sm-2" *ngFor="let photo of photos" >
     <img src="{{photo.url}}" class="img-thumbnail p-1" alt="">
     <div class="text-center d-flex justify-content-between m-2">
-      <button type="button" class="btn btn-sm btn-edit-img">Main</button>
+      <button type="button" class="btn btn-sm btn-edit-img" 
+        (click)="setMainPhoto(photo)" 
+        [ngClass]="photo.isMain ? 'btn-success active btn-outline-main' : ' btn-outline-primary'"
+        [disabled]="photo.isMain" >
+             Main
+    </button>
       <button type="button" class="btn btn-sm btn-edit-img btn-danger"><i class="fa fa-trash-o"></i></button>
     </div>
   </div>
