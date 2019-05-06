@@ -8,3 +8,11 @@ img .img-thumbnail {
     padding: 0.4em 0.6em !important;
     font-size: 12px !important;
 }
+
+.nv-file-over {
+    border: dotted 3px red;
+}
+
+input[type=file] {
+    color: transparent;
+}
