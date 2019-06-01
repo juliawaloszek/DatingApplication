@@ -1,3 +1,7 @@
 .form-control{
     padding: 0;
 }
+
+.custom-radio-el{
+    padding: 0.7rem;
+}

@@ -29,8 +29,21 @@
             </option>
           </select>
         </div>
-        <button type="submit" class="btn btn-primary" style="margin-left:10px">Apply Filters</button>
-        <button type="button" class="btn btn-info" (click)="resetFilters()" style="margin-left:10px">Reset Filter</button>
+        <button type="submit" class="btn btn-primary" style="margin-left:10px">
+          Apply Filters
+        </button>
+        <button type="button" class="btn btn-info" (click)="resetFilters()" style="margin-left:10px">
+          Reset Filter
+        </button>
+
+        <div class="col">
+            <div class="custom-radio btn-group float-right">
+              <button type="button" name="orderBy" class="custom-radio-el btn btn-primary" 
+              [(ngModel)]="userParams.orderBy" (click)="loadUsers()" btnRadio="lastActive">Last Active</button>
+              <button type="button" name="orderBy" class="custom-radio-el btn btn-primary" 
+              [(ngModel)]="userParams.orderBy" (click)="loadUsers()" btnRadio="created" >Newest Members</button>
+            </div>
+          </div>
       
       </form>
     
