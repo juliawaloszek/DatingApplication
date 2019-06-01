@@ -23,11 +23,17 @@ namespace API.DatingApp.Helpers
             .ForMember(dest => dest.Age, opt => {
                 opt.MapFrom(d => d.DateOfBirth.CalculateAge());
             });
+
+        //Definicja Mapowania DTO 
+        //CreateMap<Source, Destiny>
          CreateMap<Photo, PhotosForDetailedDto>();
          CreateMap<UserForUpdateDto, User>();
          CreateMap<Photo, PhotoForReturnDto>();
          CreateMap<PhotoForCreationDto, Photo>();
          CreateMap<UserForRegisterDto, User>();
+         //Mapowanie MessageForCreationDto=>Message oraz Message=>MessageForCreationDto
+         //Używajac ReverseMap
+         CreateMap<MessageForCreationDto, Message>().ReverseMap();
      }   
     }
 }

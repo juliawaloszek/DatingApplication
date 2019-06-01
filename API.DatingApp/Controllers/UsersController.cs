@@ -66,9 +66,11 @@ namespace API.DatingApp.Controllers
       [HttpPut("{id}")]
       public async Task<IActionResult> UpdateUser(int id, UserForUpdateDto userForUpdateDto)
       {
+        //Sprawdzenie czy użytkownik istnieje
         if(id != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
           return Unauthorized();
 
+        //pobranie użytkownika z bazy
         var userFromRepo = await _repo.GetUser(id);
 
         _mapper.Map(userForUpdateDto, userFromRepo);
