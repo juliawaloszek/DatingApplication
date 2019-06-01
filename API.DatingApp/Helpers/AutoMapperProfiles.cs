@@ -34,6 +34,12 @@ namespace API.DatingApp.Helpers
          //Mapowanie MessageForCreationDto=>Message oraz Message=>MessageForCreationDto
          //Używajac ReverseMap
          CreateMap<MessageForCreationDto, Message>().ReverseMap();
+         CreateMap<Message, MessageToReturnDto>()
+            //Zaawansowane ustawienia mappera - dodanie przesyłania zdjęcia razem z wiadomością
+            .ForMember(m => m.SenderPhotoUrl, opt =>{opt.
+                MapFrom(u => u.Sender.Photos.FirstOrDefault(p => p.IsMain).Url);})
+            .ForMember(m => m.RecipientPhotoUrl, opt => {opt.
+                MapFrom(u => u.Sender.Photos.FirstOrDefault(p => p.IsMain).Url);});
      }   
     }
 }

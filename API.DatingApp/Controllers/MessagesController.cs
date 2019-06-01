@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using API.DatingApp.Data;
@@ -42,6 +44,31 @@ namespace API.DatingApp.Controllers
             return Ok(messageFromRepo);
         }
 
+        [HttpGet]
+        public async Task<IActionResult> GetMessagesForUser(int userId, 
+            [FromQuery]MessageParams messageParams)
+        //zwrócenie listy wiadomości danego użytkownika
+        {
+            //Sprawdzenie czy użytkownik istnieje
+            if(userId != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
+                return Unauthorized();   
+
+            //Dodanie propertki do messageParams
+            messageParams.UserId = userId;
+            
+            //Przypisanie do messageFromRepo lity wiadomości z bazy 
+            var messagesFromRepo = await _repo.GetMessageForUser(messageParams);
+
+            //mapowanie DTO 
+            var messages = _mapper.Map<IEnumerable<MessageToReturnDto>>(messagesFromRepo);
+
+            //Dodanie pagination do zwracanej wiadomości
+            Response.AddPagination(messagesFromRepo.CurrentPage, messagesFromRepo.PageSize, 
+                messagesFromRepo.TotalCount, messagesFromRepo.TotalPages);
+
+            return Ok(messages);
+        }
+
         [HttpPost]
         public async Task<IActionResult> CreateMessage(int userId, MessageForCreationDto messageForCreationDto)
         {
@@ -76,5 +103,6 @@ namespace API.DatingApp.Controllers
 
             throw new Exception("Creating the messsafe failed on save");
         }
+        
     }
 }
