@@ -164,9 +164,20 @@ namespace API.DatingApp.Data
             return await PagedList<Message>.CreateAsync(messages, messageParams.PageNumber, messageParams.PageSize);
         }
 
-        public Task<IEnumerable<Message>> GetMessageThread(int userId, int recipientId)
+        //Wyświetlanie konwersacji pomiędzy dwoma użytkownikami
+        public async Task<IEnumerable<Message>> GetMessageThread(int userId, int recipientId)
         {
-            throw new NotImplementedException();
+            var messages = await _context.Messages
+                .Include(u => u.Sender).ThenInclude(p => p.Photos)
+                .Include(u => u.Recipient).ThenInclude(p => p.Photos)
+                //warunek pozwalający na pokazanie wszystkich wiadomości
+                .Where(m => m.RecipientId == userId && m.SenderId == recipientId ||
+                     m.RecipientId == recipientId && m.SenderId == userId)
+                //Uporządkowanie po MessageSent które odzwierciedla date wyslania
+                .OrderByDescending(m => m.MessageSent)
+                .ToListAsync();
+
+            return messages;
         }
     }
 }
