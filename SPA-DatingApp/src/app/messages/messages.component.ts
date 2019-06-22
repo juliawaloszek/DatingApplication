@@ -43,4 +43,20 @@ export class MessagesComponent implements OnInit {
       this.pagination.currentPage = event.page;
       this.loadMessages();
     }
+
+    //
+    deleteMessage(id: number) {
+      this.alertify.confirm('Are you sure you want delete this message', () => {
+        this.userService.deleteMessage(id, this.authService.decodedToken.nameid).subscribe(() => {
+          // splice - metoda która usuwa i dodaje elementy
+          // splice(indexDo usuniecia, ileElementow, zmienneKtoreZastapiaUsunieteElementy)
+          // W tym wypadku ueuwamy wiadomość o indeksie zgodnym z id usuwanej wiadomości podawanej jako parametr
+          // i usuwamy tylko jedną wiadomość - nic nie dodajemy wzamian
+          this.messages.splice(this.messages.findIndex(m => m.id === id), 1);
+          this.alertify.success('Message has been deleted');
+        }, error => {
+          this.alertify.error('Failed to delete the message');
+        });
+      });
+    }
 }

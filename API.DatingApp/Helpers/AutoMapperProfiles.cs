@@ -39,7 +39,7 @@ namespace API.DatingApp.Helpers
             .ForMember(m => m.SenderPhotoUrl, opt =>{opt.
                 MapFrom(u => u.Sender.Photos.FirstOrDefault(p => p.IsMain).Url);})
             .ForMember(m => m.RecipientPhotoUrl, opt => {opt.
-                MapFrom(u => u.Sender.Photos.FirstOrDefault(p => p.IsMain).Url);});
+                MapFrom(u => u.Recipient.Photos.FirstOrDefault(p => p.IsMain).Url);});
      }   
     }
 }
