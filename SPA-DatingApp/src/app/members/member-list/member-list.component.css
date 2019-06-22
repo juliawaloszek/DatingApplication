@@ -4,4 +4,25 @@
 
 .custom-radio-el{
     padding: 0.7rem;
+    margin-right: 0.25rem;
+}
+
+button{
+    padding: 0.7rem;
+}
+
+.form-group{
+    border-top: solid 1px rgb(120, 122, 123);
+    border-bottom: solid 1px rgb(120, 122, 123);
+    border-left: solid 1px rgb(120, 122, 123);
+    padding-left: 5px;
+}
+
+.form-group:last-child{
+    border-right: solid 1px rgb(120, 122, 123);
+}
+
+.form-group-wrapper{
+    display: flex;
+
 }
