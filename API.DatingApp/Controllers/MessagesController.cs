@@ -89,8 +89,11 @@ namespace API.DatingApp.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateMessage(int userId, MessageForCreationDto messageForCreationDto)
         {
+            //pobranie z repozytorium id wysyłającego
+            var sender = await _repo.GetUser(userId);
+
             //Sprawdzenie czy użytkownik istnieje
-            if(userId != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
+            if(sender.Id != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
                 return Unauthorized();
 
             //ustawienie SenderId w wiadomości na aktualnego użytkownika
@@ -111,12 +114,16 @@ namespace API.DatingApp.Controllers
 
             _repo.Add(message);
 
-            //przekształcenie Message => messageForCreationDto
-            var messageToReturn = _mapper.Map<MessageForCreationDto>(message);
-
-            //CreatedAtRoute(Name of root/nazwa ścieżki, objekt do przekazania)
+            
             if(await _repo.SaveAllAsync())
+            {
+                //przekształcenie Message => messageForCreationDto
+                var messageToReturn = _mapper.Map<MessageToReturnDto>(message);
+
+                //CreatedAtRoute(Name of root/nazwa ścieżki, objekt do przekazania)
                 return CreatedAtRoute("GetMessage", new {id = message.Id}, messageToReturn);
+            }
+                
 
             throw new Exception("Creating the messsafe failed on save");
         }

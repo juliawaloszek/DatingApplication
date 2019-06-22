@@ -37,6 +37,8 @@ export class MemberMessagesComponent implements OnInit {
     this.newMessage.recipientId = this.recipientId;
     this.userService.sendMessage(this.authService.decodedToken.nameid, this.newMessage)
       .subscribe((message: Message) => {
+        // tslint:disable-next-line: no-debugger
+        // debugger;
         // dodanie nowej wiadomości na początek tablicy z wiadomościami
         this.messages.unshift(message);
         // wyczyszczenie pola wpisywania nowej wiadomości
