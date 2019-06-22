@@ -147,15 +147,18 @@ namespace API.DatingApp.Data
             {
                 //Otrzymane wiadomości
                 case "Inbox": 
-                    messages = messages.Where(u => u.RecipientId == messageParams.UserId);
+                    messages = messages.Where(u => u.RecipientId == messageParams.UserId 
+                        && u.RecipientDeleted == false);
                     break;
                 //Wysłane wiadomości
                 case "Outbox":
-                    messages = messages.Where(u => u.SenderId == messageParams.UserId);
+                    messages = messages.Where(u => u.SenderId == messageParams.UserId 
+                        && u.SenderDeleted == false);
                     break;
                 //Nieprzeczytane wiadomości
                 default:
-                    messages = messages.Where(u => u.RecipientId == messageParams.UserId && u.IsRead == false);
+                    messages = messages.Where(u => u.RecipientId == messageParams.UserId 
+                        && u.IsRead == false && u.RecipientDeleted == false);
                     break;
             }
             //Ułożenie wiadomości chronologicznie
@@ -170,9 +173,11 @@ namespace API.DatingApp.Data
             var messages = await _context.Messages
                 .Include(u => u.Sender).ThenInclude(p => p.Photos)
                 .Include(u => u.Recipient).ThenInclude(p => p.Photos)
-                //warunek pozwalający na pokazanie wszystkich wiadomości
-                .Where(m => m.RecipientId == userId && m.SenderId == recipientId ||
-                     m.RecipientId == recipientId && m.SenderId == userId)
+                //warunek pozwalający na pokazanie wszystkich wiadomości jeśli tylko nie zostały usunięte
+                .Where(m => m.RecipientId == userId && m.RecipientDeleted == false 
+                        && m.SenderId == recipientId ||
+                     m.RecipientId == recipientId && m.SenderDeleted == false 
+                         && m.SenderId == userId)
                 //Uporządkowanie po MessageSent które odzwierciedla date wyslania
                 .OrderByDescending(m => m.MessageSent)
                 .ToListAsync();

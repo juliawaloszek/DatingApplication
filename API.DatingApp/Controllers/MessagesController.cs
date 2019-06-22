@@ -127,6 +127,41 @@ namespace API.DatingApp.Controllers
 
             throw new Exception("Creating the messsafe failed on save");
         }
+
+        //metoda usuwania wiadomości. Wykorzystujemy metode POST a nie DELETE gdyż 
+        // damy użytkownikom możliwość akceptacji usuniecia wiadomości
+        [HttpPost("{id}")]
+        public async Task<IActionResult> DeleteMessage(int id, int userId)
+        {
+            //Sprawdzenie czy użytkownik istnieje
+            if(userId != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
+                return Unauthorized();
+            
+            //pobranie wiadomości z bazy
+            var messageFromRepo = await _repo.GetMessage(id);
+
+            //ustawienia parametru iż wiadomosć jest usunieta
+            if(messageFromRepo.SenderId == userId)
+            {
+                messageFromRepo.SenderDeleted = true;
+            }
+
+            if(messageFromRepo.RecipientId == userId)
+            {
+                messageFromRepo.RecipientDeleted = true;
+            }
+
+            //usuń jesli obie osoby potwierdziły usuniecie
+            if(messageFromRepo.SenderDeleted && messageFromRepo.RecipientDeleted)
+            {
+                _repo.Delete(messageFromRepo);
+            }
+
+            if (await _repo.SaveAllAsync())
+                return NoContent();
+
+            throw new Exception("Error deleting the message");
+        }
         
     }
 }
