@@ -101,7 +101,20 @@ namespace API.DatingApp
             // seeder.SeedUsers();
             app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
             app.UseAuthentication();
-            app.UseMvc();
+            //będzie szukać domyślich plików dostępowych np. index.html
+            app.UseDefaultFiles();
+            //UseStaticFiles włącza statyczne serwowanie plików dla obecnej ścieżki
+            app.UseStaticFiles();
+            app.UseMvc(routes => {
+                //przekierowuje ścieżkę w momencie jeśli aplikacja wykryje że jest ona serwowana z statycznych plików
+                routes.MapSpaFallbackRoute(
+                    name:"spa-fallback",
+                    defaults: new {
+                        controller = "Fallback",
+                        action = "Index"
+                    }
+                );
+            });
         }
     }
 }
