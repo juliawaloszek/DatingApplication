@@ -103,4 +103,9 @@ getMessages(userId: number, page? , itemsPerPage? , messageContainer? ) {
     );
 }
 
+// Zapytanie do API przekazujemy obecnie zalogowanego użytkownika oraz id odbiorcy dostajemy wątek z wiadomościami
+getMessageThread(id: number, recipientId: number) {
+  return this.http.get<Message[]>(this.baseUrl + 'users/' + id + '/messages/thread/' + recipientId);
+}
+
 }
