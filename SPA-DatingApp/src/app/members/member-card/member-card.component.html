@@ -10,7 +10,9 @@
         </button> 
       </li>
       <li class="list-inline-item"> 
-        <button class="btn btn-primary btn-member-el"> 
+        <button class="btn btn-primary btn-member-el" 
+          [routerLink]="['/members/', user.id]" 
+          [queryParams]="{ tab:3 }" > 
           <i class="fa fa-envelope"></i> 
         </button> 
       </li>

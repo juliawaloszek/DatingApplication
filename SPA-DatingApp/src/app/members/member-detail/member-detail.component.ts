@@ -12,6 +12,8 @@ import { TabsetComponent } from 'ngx-bootstrap';
   styleUrls: ['./member-detail.component.css']
 })
 export class MemberDetailComponent implements OnInit {
+  // Dodanie dekoratora wykorzystujacego TabsetComponent z ngx-bootstrap pozwalający na nawigacje pomiędzy zakładkami
+  // nie używając przycisków zakładek - w tym wypadku przejście do wiadomości przy użyciu dodatkowego przycisku
   @ViewChild('memberTabs') memberTabs: TabsetComponent;
   user: User;
   galleryOptions: NgxGalleryOptions[];
@@ -23,6 +25,14 @@ export class MemberDetailComponent implements OnInit {
   ngOnInit() {
     this.route.data.subscribe(data => {
       this.user = data.user;
+    });
+
+    // pobieranie danych dostarczonych w linku - w tym wypadku przeniesienie użytkownika
+    // bezpośrednio do zakładki messages
+    this.route.queryParams.subscribe(params => {
+      const selectedTab = params.tab;
+      // dodaj parametr "active" do zakładki pobranej z linku
+      this.memberTabs.tabs[selectedTab > 0 ? selectedTab : 0].active = true;
     });
 
     this.galleryOptions = [
@@ -53,6 +63,7 @@ export class MemberDetailComponent implements OnInit {
     return imageUrls;
   }
 
+  // dodaje status active konkretnej zakładce
   selectTab(tabId: number) {
     this.memberTabs.tabs[tabId].active = true;
   }
